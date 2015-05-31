@@ -10,7 +10,7 @@
 
 	function Telemetrics($el, options){
 		options = $.extend({
-			historyLength: 1
+			historyLength: 2
 		}, options);
 
 		var TWO_PI = Math.PI * 2,
@@ -135,6 +135,7 @@
 		this.get = function(){
 			if (!cache) { 
 				cache = {
+					position: {x:px, y:py},
 					delta: {x:dx, y:dx},
 					prev: {x:qx, y:qy},
 					angle: angle(dx, dy),

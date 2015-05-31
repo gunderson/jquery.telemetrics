@@ -5,37 +5,23 @@
   <title>jquery.telemetrics Test Suite</title>
   <!-- Load local jQuery. -->
   <script src="../bower_components/jquery/jquery.js"></script>
-  <!-- Load local QUnit. -->
-  <!-- <link rel="stylesheet" href="../bower_components/qunit/qunit.css" media="screen"> -->
-  <!-- <script src="../bower_components/qunit/qunit.js"></script> -->
   <!-- Load local lib and tests. -->
   <script src="../src/telemetrics.js"></script>
+</head>
+<body>
+  <div id="dx">dx <span class="val"></span></div>
+  <div id="dx">dx <span class="val"></span></div>
+  <div id="dx">dx <span class="val"></span></div>
 
 
+</body>
 
   <script>
     $(window)
-      .on("change:telemetrics", function(e){
-        console.log("change:telemetrics", e)
+      .on("telemetrics", function(e){
+        console.log("telemetrics", e)
       })
       .telemetrics()
       .start();
   </script>
-
-
-
-  <!-- <script src="telemetrics_test.js"></script> -->
-  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
-       you REALLY want to mess around with jQuery in the console. REMEMBER WE
-       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
-  <!-- <script>window._$ = jQuery.noConflict(true);</script> -->
-</head>
-<body>
-  <div id="qunit"></div>
-  <div id="qunit-fixture">
-    <span>lame test markup</span>
-    <span>normal test markup</span>
-    <span>awesome test markup</span>
-  </div>
-</body>
 </html>
